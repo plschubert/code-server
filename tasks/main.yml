@@ -1,0 +1,7 @@
+---
+# tasks file for ./code-server
+- name: Include install.yml
+  include_tasks: roles/code-server/tasks/install.yml
+
+- name: Include service.yml
+  include_tasks: roles/code-server/tasks/service.yml

@@ -1,0 +1,9 @@
+[Unit]
+Description=Starts code-server
+
+[Service]
+Type=simple
+ExecStart=/bin/bash /usr/bin/code-server_service.sh
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+---
+# defaults file for ./code-server
+code_server_dl_url: https://github.com/codercom/code-server/releases/download/1.696-vsc1.33.0
+code_server_bin: code-server1.696-vsc1.33.0-linux-x64
+
+#port: 80
+app_directory: my_application
+password: my_secure_password

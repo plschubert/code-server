@@ -1,0 +1,30 @@
+- name: config | Configuring code-server_service.sh
+  template:
+    src: usr/bin/code-server_service.sh.j2
+    dest: /usr/bin/code-server_service.sh
+  become: true
+#  notify:
+#    - "restart {{ guacamole_tomcat }}"
+#    - restart guacd
+
+- name: config | Configuring code-server.service
+  template:
+    src: etc/systemd/system/code-server.service
+    dest: /etc/systemd/system/code-server.service   
+  become: true
+
+- name: Changing perm of "/usr/bin/code-server_service.sh", adding "+x"
+  file: dest=/bin/code-server mode=+x
+#  become: true
+
+- name: Reload systemctl
+  shell: systemctl daemon-reload
+  become: true
+
+- name: Start code-server service
+  shell: systemctl start code-server
+  become: true
+
+- name: Enable code-server service
+  shell: systemctl enable code-server
+  become: true 
