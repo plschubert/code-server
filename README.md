@@ -1,7 +1,7 @@
 code-server
 =========
 
-code-server is VS Code running on a remote server, accessible through the browser. This role installs vs code and runs it as a systemd service.
+code-server is VS Code running on a remote server, accessible through the browser. This role installs code-server and runs it as a systemd service.
 
 Requirements
 ------------
