@@ -1,31 +1,35 @@
-Role Name
+code-server
 =========
 
-A brief description of the role goes here.
+code-server is VS Code running on a remote server, accessible through the browser. This role installs vs code and runs it as a systemd service.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+code_server_directory: Directory in which visual studio code will run.
+code_server_password: Password to login 
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Visual Studio Code will be available under https://[your-ip]:8443
 
     - hosts: servers
+      vars:
+        code_server_directory: ~/my_app_dir
+        code_server_password: myPassword
       roles:
-         - { role: username.rolename, x: 42 }
+         - code-server
 
 License
 -------
@@ -35,4 +39,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role was createdin 2019 by Patrick Schubert <Patrick.Schubert@atos.net>
